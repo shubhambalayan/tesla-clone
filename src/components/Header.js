@@ -108,14 +108,21 @@ const BurgerNavMenu = styled.div`
     right: 0;
     bottom: 0;
     background-color: #fff;
-    padding: 20px 40px;
+    padding: 20px 30px;
     width: 300px;
     z-index: 100;
 
     li {
         list-style: none;
+        font-size: 15px;
         font-weight: 600;
-        padding: 12px 0;
+        padding: 12px 10px 12px 20px;
+        border-radius: 50px;
+    }
+
+    li:hover {
+        transition: background-color 0.5s;
+        background-color: rgba(0,0,0,0.05);
     }
 
     .closeIcon {
