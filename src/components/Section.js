@@ -1,13 +1,17 @@
 import React from 'react'
 import styled from 'styled-components'
+import Fade from 'react-reveal/Fade'
 
 function Section({ title, backgroundImage, description, darkButton, lightButton }) {
     return (
         <Wrap bgImage={backgroundImage}>
-            <ItemText>
-                <h1>{title}</h1>
-                <p>{description}</p>
-            </ItemText>
+            <Fade bottom>
+                <ItemText>
+                    <h1>{title}</h1>
+                    <p>{description}</p>
+                </ItemText>
+            </Fade>
+            <Fade bottom>
             <ButtonGroup>
                 <DarkButton>
                     {darkButton}
@@ -18,6 +22,7 @@ function Section({ title, backgroundImage, description, darkButton, lightButton 
                 </LightButton>
                 }
             </ButtonGroup>
+                </Fade>
             <DownArrow src="/images/down-arrow.svg" />
         </Wrap>
     )
@@ -29,19 +34,25 @@ const Wrap = styled.div`
     width: 100%;
     height: 100vh;
     background-color: #fff;
-    background-size: cover;
-    background-position: center;
-    background-repeat: no-repeat;
     display: flex;
     flex-direction: column;
     justify-content: space-between;
     align-items: center;
-    background-image: ${props => `url('/images/${props.bgImage}')`}
+    background-image: ${props => `url('/images/${props.bgImage}')`};
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
 `
 
 const ItemText = styled.div`
     padding-top: 15vh;
-    text-align: center
+    text-align: center;
+
+    h1 {
+        font-size: 40px;
+        font-weight: 600;
+        margin-bottom: 10px;
+    }
 `
 
 const ButtonGroup = styled.div`
