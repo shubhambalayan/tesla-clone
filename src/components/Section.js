@@ -42,6 +42,8 @@ const Wrap = styled.div`
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;
+    scroll-snap-align: start;
+
 `
 
 const ItemText = styled.div`

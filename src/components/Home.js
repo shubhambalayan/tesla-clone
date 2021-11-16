@@ -21,5 +21,7 @@ return (
 export default Home
 
 const Container = styled.div`
-height: 100vh;
+    height: 100vh;
+    scroll-snap-type: y mandatory;
+    overflow-y: scroll;
 `
